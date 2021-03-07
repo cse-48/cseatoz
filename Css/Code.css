@@ -1,0 +1,12 @@
+.code {
+     font-size:15px;
+     border-style: double;
+}
+.output{
+    font-size:17px;
+}
+.output{
+   background-color: rgba(150, 150, 150, 0.2);
+   border-style: groove;
+   margin-top: 4px
+}
