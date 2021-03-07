@@ -22,7 +22,18 @@ var BindInsideTheme = (recoList) => {
             console.log(rcl);
             document.getElementById("recommended").innerHTML = rcl;
 };
+var FindLabelsOfPost = () => {
+        var labelsElements = document.getElementsByClassName("byline post-labels");
+        var labelList = labelsElements.length > 0  ? labelsElements[1].querySelectorAll("a") : [];
+        var labels=[];
+        for( let i=0; i<labelList.length; i++){
+                 labels.push(labelList[i].firstChild.nodeValue);   
+        }
+        console.log(labels);
+        return labels;
+};
 var BindRecoPost= () => {
+        FindLabelsOfPost();
         BindInsideTheme(GetRecoPostByDesc());
 };
 BindRecoPost();
