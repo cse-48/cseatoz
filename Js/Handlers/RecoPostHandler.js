@@ -62,13 +62,13 @@ var FindLabelsOfPost = () => {
         var labelList = labelsElements.length > 0  ? labelsElements[1].querySelectorAll("a") : [];
         var labels=[];
         for( let i=0; i<labelList.length; i++){
-                 labels.push(labelList[i].firstChild.nodeValue);   
+                 labels.push(labelList[i].firstChild.nodeValue.toLowerCase());   
         }
         console.log(labels);
         return labels;
 };
 var BindRecoPost= () => {
-        FindLabelsOfPost();
-        BindInsideTheme(GetRecoPostByDesc());
+//         FindLabelsOfPost();
+        BindInsideTheme(GetRecoPostByLabels(FindLabelsOfPost(),3));
 };
 BindRecoPost();
