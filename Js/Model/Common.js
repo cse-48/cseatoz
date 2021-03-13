@@ -1,3 +1,5 @@
+var lastId = -1;
+var getId = () => { return lastId += 2;};
 class Item {
     constructor(name, value) {
         this.Name = name;
@@ -6,9 +8,10 @@ class Item {
  }
 class RecoPost {
   constructor(title,  link) {
+    this.Id = getId();
     this.Title = title;
     this.Link = link;
     this.Labels = "";
-    this.RecoScore =0;  
+    this.RecoScore = 0;  
   }
 }
