@@ -8,5 +8,7 @@ class RecoPost {
   constructor(title,  link) {
     this.Title = title;
     this.Link = link;
+    this.Labels = "";
+    this.RecoScore =0;  
   }
 }
