@@ -10,6 +10,29 @@ var GetRecoPostByDesc = () =>{
             console.log(recoList);
             return recoList;
 };
+var recoScoreDict={
+    "c#":100,
+    "react":80,
+    "iterate":50,
+    "loop":50,
+    "dictionary":40
+};
+var GerRecoScore = (lab) => {
+    return lab in recoScoreDict ? recoScoreDict[lab] :15;
+};
+var GetRecoPostByLabels = (labelList,count) =>{
+            let recoList=[];
+            for(var i in _postDataDict)
+            {
+                for( var label in labelList)
+                {
+                    _postDataDict[i].RecoScore += (_postDataDict[i].Labels.includes(labelList[label]) ? GerRecoScore(labelList[label]):-_postDataDict[i].Labels.length);
+                }
+                recoList.push([_postDataDict[i].Id,_postDataDict[i].RecoScore]);
+            }
+            recoList.sort((a,b)=>{return b[1]-a[1];});
+            return recoList.slice(1,count+1);
+};
 var BindInsideTheme = (recoList) => {
             document.getElementById("recommended_label").classList.add('justify-content-center');
             document.getElementById("reco_post").classList.add('m-top-30');
