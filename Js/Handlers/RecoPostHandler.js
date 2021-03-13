@@ -20,7 +20,7 @@ var recoScoreDict={
 var GerRecoScore = (lab) => {
     return lab in recoScoreDict ? recoScoreDict[lab] :15;
 };
-var GetRecoPostByLabels = (labelList,count) =>{
+var GetSimilarPostId = (labelList,count)=> {
             let recoList=[];
             for(var i in _postDataDict)
             {
@@ -32,6 +32,18 @@ var GetRecoPostByLabels = (labelList,count) =>{
             }
             recoList.sort((a,b)=>{return b[1]-a[1];});
             return recoList.slice(1,count+1);
+};
+var GetRecoPostByLabels = (labelList,count) =>{
+            var postIdList = GetSimilarPostId(labelList,count);
+            var result=[];
+            for(var i in postIdList)
+            {
+                if(postIdList[i][0] in _postDataDict)
+                {
+                    result.push(_postDataDict[postIdList[i][0]]);
+                }
+            }
+            return result;
 };
 var BindInsideTheme = (recoList) => {
             document.getElementById("recommended_label").classList.add('justify-content-center');
