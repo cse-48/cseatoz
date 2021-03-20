@@ -31,7 +31,7 @@ var GetCookie = (Name) => {
 var HandleCookieOnPageLoad = () => {
   if(!GetCookie("_abTest"))
   {
-    SetCookie("_abTest", Math.floor(Math.random() * 100);
+    SetCookie("_abTest", Math.floor(Math.random() * 100));
   }
 };
 HandleCookieOnPageLoad();
