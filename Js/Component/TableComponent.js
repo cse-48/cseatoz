@@ -58,3 +58,45 @@ var SetTable = (id,tableData) => {
    table += "</table>";
    document.getElementById(id).innerHTML = table;
 };
+
+// v2
+var SetTable_v2 = (id,tableData) => {
+    let table = document.getElementById(id);
+    table.className = tableData.class.table;
+    // thead
+    let theader = table.createTHead();
+    theader.className = tableData.class.thead;
+    let row = theader.insertRow(0);
+    row.className = tableData.class.thead_tr;
+    let colum = 0;
+    tableData.data.headRowItems.forEach((item)=>{
+        let cell = document.createElement("TH");
+        cell.className = tableData.class.thead_tr_th;
+        cell.innerHTML = item.Name;
+        row.appendChild(cell);
+      });
+   //tbody 
+      var tbody = table.createTBody();
+      tbody.className = tableData.class.tbody;
+      let rowCount = 0;
+      tableData.data.bodyRows.forEach((rowItems)=>{
+          row = tbody.insertRow(rowCount++);
+          row.className = tableData.class.tbody_tr;
+          colum = 0;
+          for(let i = 0 ; i < rowItems.length ;i++){
+              if( i < tableData.thCount){
+                  let cell = document.createElement("TH");
+                  cell.className = tableData.class.tbody_tr_th;
+                  cell.innerHTML = rowItems[i].Name;
+                  row.appendChild(cell);
+                  colum++;
+              }
+              else
+              {
+                  let cell = row.insertCell(colum++);
+                  cell.className = tableData.class.tbody_tr_td;
+                  cell.innerHTML = rowItems[i].Name;
+              }
+          }
+      });
+};
