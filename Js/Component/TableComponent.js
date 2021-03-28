@@ -61,7 +61,8 @@ var SetTable = (id,tableData) => {
 
 // v2
 var SetTable_v2 = (id,tableData) => {
-    let table = document.getElementById(id);
+    let tableContainer = document.getElementById(id);
+    let table = document.createElement("TABLE");
     table.className = tableData.class.table;
     // thead
     let theader = table.createTHead();
@@ -99,4 +100,5 @@ var SetTable_v2 = (id,tableData) => {
               }
           }
       });
+  tableContainer.appendChild(table);
 };
