@@ -1,5 +1,5 @@
 
-class TableClass {
+class TableClasses {
   constructor(){
     this.table = "full-width";
     this.thead = "";
