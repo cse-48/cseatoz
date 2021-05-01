@@ -3,10 +3,10 @@ var execute_ReadyStateInteractive = () => {
     let script = document.createElement("SCRIPT");
     switch (file) {
       case JsFile.COLLAPSE:
-        script.src = "Js/Services/clp_192219_31216_Collapsible.js";
+        script.src = _home + "Js/Services/clp_192219_31216_Collapsible.js";
         break;
       case JsFile.TABLE:
-        script.src = "Js/Component/TableComponent.js";
+        script.src = _home + "Js/Component/TableComponent.js";
         break;
       default:
         console.log("file not loaded " + file);

@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="Css\custom.css" />
     <link rel="stylesheet" href="Css\Common.css" />
     <script type="text/javascript">
+      var _home = "";
       var loadableJsFile = [];
       var callableJsFunction = [];
       //   window.onload = execute_OnLoad();
@@ -64,7 +65,7 @@
         new Item("Ctrl + C (or Ctrl + Insert)"),
         new Item("Copy selected text"),
       ]);
-      table.Params.push(new TableComponent(tableClasses,data));
+      table.Params.push(new TableComponent(tableClasses, data));
       callableJsFunction.push(table);
     </script>
     <div id="table"></div>
