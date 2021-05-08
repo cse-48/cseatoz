@@ -106,6 +106,9 @@
   border-radius: 0;
 }
 
+.m-0 {
+  margin: 0px;
+}
 .m-2 {
   margin: 2px;
 }
@@ -330,6 +333,9 @@
 }
 .ml-30 {
   margin-left: 30px;
+}
+.p-0 {
+  padding: 0px;
 }
 .p-2 {
   padding: 2px;
