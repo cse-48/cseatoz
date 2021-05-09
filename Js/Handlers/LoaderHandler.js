@@ -14,24 +14,33 @@ var execute_ReadyStateInteractive = () => {
     document.getElementsByTagName("head")[0].appendChild(script);
   });
 };
+var callFunction = (f) => {
+  try {
+    switch (f.Name) {
+      case JsFun.Collapse:
+        Collapse();
+        break;
+      case JsFun.SetTable_v2:
+        SetTable_v2.apply(this, f.Params);
+        break;
+      default:
+        if (f.Name && f.Params.length == 0) {
+          f.Name();
+        } else {
+          console.log("WARN fun not Found " + f.Name);
+        }
+    }
+  } catch (ex) {
+    console.log("ERROR in fun call " + f.Name + " Error Message :- " + ex);
+  }
+};
 var execute_ReadyStateComplete = () => {
   callableJsFunction.forEach((f) => {
-    try {
-      switch (f.Name) {
-        case JsFun.Collapse:
-          Collapse();
-          break;
-        case JsFun.SetTable_v2:
-          SetTable_v2.apply(this, f.Params);
-          break;
-        default:
-          console.log("WARN fun not Found " + f.Name);
-      }
-    } catch (ex) {
-      console.log("ERROR in fun call " + f.Name + " Error Message :- " + ex);
-    }
+    callFunction(f);
   });
 };
 var execute_OnLoad = () => {
-  // Collapse();
+  onLoadCallableJsFunction.forEach((f) => {
+    callFunction(f);
+  });
 };
