@@ -12,10 +12,15 @@ var GetRecoPostByDesc = () =>{
 };
 var recoScoreDict={
     "c#":100,
+    "computer":100,
+    "keyboard":80,
+    "shortcut":80,
     "react":80,
     "iterate":50,
     "loop":50,
-    "dictionary":40
+    "ctrl":50,
+    "dictionary":40,
+    "window":40
 };
 var GerRecoScore = (lab) => {
     return lab in recoScoreDict ? recoScoreDict[lab] :15;
@@ -62,7 +67,8 @@ var FindLabelsOfPost = () => {
         var labelList = labelsElements.length > 0  ? labelsElements[1].querySelectorAll("a") : [];
         var labels=[];
         for( let i=0; i<labelList.length; i++){
-                 labels.push(labelList[i].firstChild.nodeValue.toLowerCase());   
+            labels.push(labelList[i].innerText.toLowerCase().trim());   
+            //labels.push(labelList[i].firstChild.nodeValue.toLowerCase());   
         }
         console.log(labels);
         return labels;

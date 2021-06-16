@@ -10,3 +10,18 @@
    border-style: groove;
    margin-top: 4px
 }
+.codeblock{
+  overflow-x:scroll;
+}
+.kwd{
+  color:#008;
+}
+.pun{
+  color:#660;
+}
+.typ{
+  color:#606;
+}
+.str{
+  color:#080;
+}
