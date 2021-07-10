@@ -1,11 +1,11 @@
 function SocialTags() {
-	this.OgImage = _HomeCDNImagePath + '/' + Cseatoz.ImageSize('small') + '/CSE.jpg';
+	this.OgImage = _HomeCDNImagePath + '/' + Cseatoz.ImageSize('medium') + '/CSE.jpg';
 	this.OgType = 'website';
 	this.OgSiteName = 'cseatoz';
 	this.TwSite = '@cseatoz';
 	this.TwTitle;
 	this.TwCreator = '@cseatoz';
-	this.TwImage = _HomeCDNImagePath + '/' + Cseatoz.ImageSize('small') + '/CSE.jpg';
+	this.TwImage = _HomeCDNImagePath + '/' + Cseatoz.ImageSize('medium') + '/CSE.jpg';
 	this.keywords = 'c#,java,python,machine learning,source'; //cseatoz,csea2z,interview,tips
 }
 const TagAttribute = {
