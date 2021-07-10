@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>cseatoz</title>
+		<link rel="stylesheet" href="Css\Code.css" />
+		<script src="Js\BL\ColoredCodeV2.js"></script>
+		<script>
+			var myFunction = () => {
+				var spanedcode = ColoredCode(document.getElementById('code').value);
+				//     document.getElementById("result2").value=spanedcode.children;
+				//     document.getElementById("view").appendChild(spanedcode);
+				document.getElementById('result2').value = spanedcode;
+				document.getElementById('view').innerHTML = spanedcode;
+			};
+		</script>
+	</head>
+	<body>
+		<div style="min-width: 50%; float: left">
+			<div>
+				<textarea id="code" style="width: 100%; height: 250px; position: relative"></textarea>
+			</div>
+			<button onclick="myFunction()" style="float: right; margin: 10px; background-color: rgb(21, 20, 22);color: rgb(214, 180, 180)">Get span Tag Code</button>
+			<div id="result"></div>
+			<textarea id="result2" style="width: 100%; height: 200px"></textarea>
+		</div>
+		<div style="min-width: 45%; margin-left:10px; float: right; border: 1px solid gray;min-height: 400px; padding: 5px;">
+			<div id="view"></div>
+		</div>
+	</body>
+</html>
