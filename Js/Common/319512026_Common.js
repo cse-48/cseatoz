@@ -25,7 +25,7 @@ class Cseatoz {
 		switch (size) {
 			case 'small':
 				return '400';
-			case 'mediam':
+			case 'medium':
 				return '768';
 			case 'large':
 				return '1200';
