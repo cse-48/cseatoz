@@ -1,36 +1,37 @@
 <html>
-  <head>
-    <!-- <script src="Js\Services\clp_192219_31216_Collapsible.js"></script> -->
-    <link rel="stylesheet" href="Css\custom.css" />
-    <link rel="stylesheet" href="Css\Common.css" />
-    <script type="text/javascript">
-      var _home = "";
-      var loadableJsFile = [];
-      var callableJsFunction = [];
-      //   window.onload = execute_OnLoad();
-      document.addEventListener("readystatechange", (event) => {
-        // When HTML/DOM elements are ready:
-        if (event.target.readyState === "interactive") {
-          //does same as:  ..addEventListener("DOMContentLoaded"..
-          execute_ReadyStateInteractive();
-        }
+	<head>
+		<!-- <script src="Js\Services\clp_192219_31216_Collapsible.js"></script> -->
+		<link rel="stylesheet" href="Css\custom.css" />
+		<link rel="stylesheet" href="Css\Common.css" />
+		<script type="text/javascript">
+			var loadableJsFile = [];
+			var callableJsFunction = [];
+			var _home = '';
+			//   window.onload = execute_OnLoad();
+			document.addEventListener('readystatechange', (event) => {
+				// When HTML/DOM elements are ready:
+				if (event.target.readyState === 'interactive') {
+					//does same as:  ..addEventListener("DOMContentLoaded"..
+					execute_ReadyStateInteractive();
+				}
 
-        // When window loaded ( external resources are loaded too- `css`,`src`, etc...)
-        if (event.target.readyState === "complete") {
-          execute_ReadyStateComplete();
-          //   executeAfterLoad();
-        }
-      });
-    </script>
-    <script src="Js\Enum\FileEnum.js"></script>
-    <script src="Js\Enum\FunEnum.js"></script>
-    <script src="Js\Model\Function.js"></script>
-    <script src="Js\Handlers\LoaderHandler.js"></script>
-    <script src="Js\ComponentModel\Table.js"></script>
-    <script src="Js\Model\Common.js"></script>
-  </head>
-  <body>
-    <!-- <script>
+				// When window loaded ( external resources are loaded too- `css`,`src`, etc...)
+				if (event.target.readyState === 'complete') {
+					execute_ReadyStateComplete();
+					//   executeAfterLoad();
+				}
+			});
+		</script>
+		<script src="Js\Enum\FileEnum.js"></script>
+		<script src="Js\Enum\FunEnum.js"></script>
+		<script src="Js\Model\Function.js"></script>
+		<script src="Js\Handlers\LoaderHandler.js"></script>
+		<script src="Js\ComponentModel\Table.js"></script>
+		<script src="Js\Model\Common.js"></script>
+		<script src="Js\Common\319512026_Common.js"></script>
+	</head>
+	<body>
+		<!-- <script>
       var fun = (d, s) => {
         console.log("inside fun " + d + " second arg : " + s);
       };
@@ -40,63 +41,54 @@
       obj.Params.push("call by params");
       callableJsFunction.push(obj);
     </script> -->
-    <p>ajkdjkgh</p>
-    <script>
-      loadableJsFile.push(JsFile.COLLAPSE);
-      loadableJsFile.push(JsFile.TABLE);
-      loadableJsFile.push(JsFile.UL);
-      callableJsFunction.push(new Function(JsFun.Collapse));
-      let table = new Function(JsFun.SetTable_v2);
-      table.Params.push("table");
-      var tableClasses = new TableClasses();
-      var data = new TableData();
-      data.headRowItems.push(new Item("Key Combination"));
-      data.headRowItems.push(new Item("To do this"));
+		<p>ajkdjkgh</p>
+		<script>
+			loadableJsFile.push(JsFile.COLLAPSE);
+			loadableJsFile.push(JsFile.TABLE);
+			loadableJsFile.push(JsFile.UL);
+			callableJsFunction.push(new Function(JsFun.Collapse));
+			let table = new Function(JsFun.SetTable_v2);
+			table.Params.push('table');
+			var tableClasses = new TableClasses();
+			var data = new TableData();
+			data.headRowItems.push(new Item('Key Combination'));
+			data.headRowItems.push(new Item('To do this'));
 
-      data.bodyRows.push([
-        new Item("Ctrl + A"),
-        new Item("Select all contents of the page"),
-      ]);
-      data.bodyRows.push([
-        new Item("Ctrl + B"),
-        new Item("Bold highlighted selection"),
-      ]);
-      data.bodyRows.push([
-        new Item("Ctrl + C (or Ctrl + Insert)"),
-        new Item("Copy selected text"),
-      ]);
-      table.Params.push(new TableComponent(tableClasses, data));
-      callableJsFunction.push(table);
-    </script>
-    <div id="table"></div>
-    <div
-      class="btn btn-block btn-success"
-      data-toggle="collapse"
-      data-target="#demo1"
-    >
-      Click me
+			data.bodyRows.push([new Item('Ctrl + A'), new Item('Select all contents of the page')]);
+			data.bodyRows.push([new Item('Ctrl + B'), new Item('Bold highlighted selection')]);
+			data.bodyRows.push([new Item('Ctrl + C (or Ctrl + Insert)'), new Item('Copy selected text')]);
+			table.Params.push(new TableComponent(tableClasses, data));
+			callableJsFunction.push(table);
+		</script>
+		<div id="table"></div>
+		<div class="btn btn-block btn-success" data-toggle="collapse" data-target="#demo1">Click me</div>
+		<button type="button" data-toggle="collapse" data-target="#demo1">Open Collapsible</button>
+		<div class="collapse" id="demo1">
+			<p>
+				ankit Lorem ipsum. hhhhhhhhhhh hi io rrrrrrrr r rfy f y juj srde ry rtu trdg ryr tyu g re ytr he yrey e
+				dgfe trh tyu f gd rt
+			</p>
+		</div>
+		<button type="button" data-toggle="collapse" data-target="#demo2">Open Collapsible</button>
+		<div class="collapse" id="demo2">
+			<p>
+				ankit chaudhary and you to me Lorem ipsum. hhhhhhhhhhh hi io rrrrrrrr r rfy f y juj srde ry rtu trdg ryr
+				tyu g re ytr he yrey e dgfe trh tyu f gd rt
+			</p>
+		</div>
+		<button type="button" data-toggle="collapse" data-target="#demo3">Open Collapsible</button>
+    <div style="min-height: 100px; background-color: blue;width: 100%;" id="div">
+      <button type="button" id="btn">Event fire</button>
     </div>
-    <button type="button" data-toggle="collapse" data-target="#demo1">
-      Open Collapsible
-    </button>
-    <div class="collapse" id="demo1">
-      <p>
-        ankit Lorem ipsum. hhhhhhhhhhh hi io rrrrrrrr r rfy f y juj srde ry rtu
-        trdg ryr tyu g re ytr he yrey e dgfe trh tyu f gd rt
-      </p>
-    </div>
-    <button type="button" data-toggle="collapse" data-target="#demo2">
-      Open Collapsible
-    </button>
-    <div class="collapse" id="demo2">
-      <p>
-        ankit chaudhary and you to me Lorem ipsum. hhhhhhhhhhh hi io rrrrrrrr r
-        rfy f y juj srde ry rtu trdg ryr tyu g re ytr he yrey e dgfe trh tyu f
-        gd rt
-      </p>
-    </div>
-    <button type="button" data-toggle="collapse" data-target="#demo3">
-      Open Collapsible
-    </button>
-  </body>
+		
+		<script>
+			Cseatoz.addEvent(document.getElementById('btn'), 'click', () => {
+				console.log('Event fired scuuessfully');
+			});
+      Cseatoz.addEvent(document.getElementById('div'), 'click', () => {
+				console.log('Event fired scuuessfully div');
+			},true);
+			Cseatoz.test('ankit');
+		</script>
+	</body>
 </html>

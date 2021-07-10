@@ -2,12 +2,13 @@
 var AllCookieDict = {};
 
 var SetCookie = (Name , Value) => {
-  if(DomainValidation() && !(Name in AllCookieDict))
+  if(Cseatoz.DomainValidation() && !(Name in AllCookieDict))
   {
     document.cookie = Name+"="+Value;
     AllCookieDict[Name]=Value;
     return true;
   }
+  Cseatoz.warnLog("Unauthorize access");
   return false;
 };
 var ReadAndSetCookie = () => {
